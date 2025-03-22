@@ -4,4 +4,6 @@ metadata:
   name: myconfigmap
 data:
   username: k8s-admin
-  access_level: "1"    
+  access_level: "1" 
+  cource: "devops"   
+  developer: "anjaneya"
