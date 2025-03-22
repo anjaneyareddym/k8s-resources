@@ -1,0 +1,11 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: env-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    env:
+      - name: cource
+        value: devops
