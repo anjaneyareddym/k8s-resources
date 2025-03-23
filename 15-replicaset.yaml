@@ -1,0 +1,44 @@
+kind: ReplicaSet
+apiVersion: apps/v1
+metadat:
+  name: nginx
+  labels:
+    app: nginx
+    tier: frontend
+spec:
+  replicas: 3
+  selector: 
+    matchLabels:
+      app: nginx
+      tier: frontend
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: nginx
+        tier: frontend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:stable-perl   
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: replicaset-service
+spec: 
+  type: NodePort
+  selector: 
+    matchLabels:
+      app: nginx
+      tier: frontend
+  ports:
+  - name: nginx-svc-port
+    protocol: TCP
+    port: 80 # service port
+    targetPort: 80 # container port           
+
+
+      
+
+
