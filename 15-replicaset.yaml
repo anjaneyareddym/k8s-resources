@@ -23,7 +23,7 @@ spec:
         image: nginx:stable-perl   
 ---
 kind: Service
-apiVersion: apps/v1
+apiVersion: v1
 metadata:
   name: replicaset-service
 spec: 
