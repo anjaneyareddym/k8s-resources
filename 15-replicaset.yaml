@@ -25,9 +25,8 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: replicaset-service
+  name: nginx
 spec: 
-  type: NodePort
   selector: 
     matchLabels:
       app: nginx
